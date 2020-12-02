@@ -72,6 +72,16 @@ class Swish(nn.Module):
     def forward(self, x):
         return x * self.s(x)
 
+class MySine(nn.Module):
+    """
+        sine activation function
+    """
+    def __init__(self):
+        super(MySine, self).__init__()
+
+    def forward(self, x):
+        return torch.sin(x)
+
 
 def act(act_fun = 'LeakyReLU'):
     '''
@@ -86,6 +96,8 @@ def act(act_fun = 'LeakyReLU'):
             return nn.ELU()
         elif act_fun == 'none':
             return nn.Sequential()
+        elif act_fun == 'MySine'
+            return MySine()
         else:
             assert False
     else:
