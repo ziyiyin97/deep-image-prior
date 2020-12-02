@@ -96,7 +96,7 @@ def act(act_fun = 'LeakyReLU'):
             return nn.ELU()
         elif act_fun == 'none':
             return nn.Sequential()
-        elif act_fun == 'MySine'
+        elif act_fun == 'MySine':
             return MySine()
         else:
             assert False
